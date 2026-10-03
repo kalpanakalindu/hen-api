@@ -39,11 +39,13 @@ const connectToDb = async () => {
   }
 };
 
-const app = new Hono();
+const app = new Hono()
 
-app.use(cors());
-app.use(prettyJSON());
-app.use(logger());
+// Add CORS middleware once
+app.use('*', cors())
+
+app.use(prettyJSON())
+app.use(logger())
 
 app.get("/", (c) => {
   return c.text("Welcome to Hentai API!");
