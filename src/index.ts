@@ -25,7 +25,9 @@ if(missingEnvVars.length > 0) {
 
 const redis = new Redis({
     host: process.env.REDIS_HOST,
-    password: process.env.REDIS_PASSWORD
+    password: process.env.REDIS_PASSWORD,
+    port: 6379,
+    tls: {}
 });
 const mongoClient = process.env.MONGODB_URL ? new MongoClient(process.env.MONGODB_URL) : undefined;
 let db: Db | undefined;
