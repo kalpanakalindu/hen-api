@@ -5,7 +5,7 @@ import type { PaginatedResult } from "../types/r34";
 
 export default class Hanime {
   private readonly BASE_URL = "https://hanime.tv";
-  private readonly SEARCH_URL = "https://search.htv-services.com";
+  private readonly SEARCH_URL = "https://htv-services.com/api/v1/search";
 
   public async getRecent(page = 1, perPage = 10): Promise<PaginatedResult<SearchResult>> {
     const response = await fetch(this.SEARCH_URL, {
